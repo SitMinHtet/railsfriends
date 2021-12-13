@@ -1,5 +1,11 @@
 # README
 
+
+I'm SitMinHtet,
+This is my First Rails Web Page.
+
+Follow my github
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
