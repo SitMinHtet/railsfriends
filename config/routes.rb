@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'contact', to: "home#contact", as: "contact1"
   get '/contact1', to: redirect("/contact")
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end

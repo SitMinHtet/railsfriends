@@ -1,17 +1,8 @@
+<h1>Editing Friend</h1>
+<br/>
+<%= render 'form', friend: @friend %>
 
-<div class="card" style="width: 16rem;">
-    <div class="card-header">
-        <h1 align="center">Editing</h1>
-    </div>
-  <div class="card-body">
-   <%= render 'form', friend: @friend %>
-
-    <%= link_to 'Show', @friend %><br>
-
-    <%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }%><br>
-
-    <%= link_to 'Back', friends_path %>
-  </div>
-</div>
-
-
+<br/>
+<%= link_to 'Show', @friend, class:"btn btn-secondary", style:"color:white" %>
+<%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style:"color:white" %>
+<%= link_to 'Back', friends_path, class:"btn btn-dark", style:"color:white" %>
