@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+
+<% if user_signed_in? %>
+
+<%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary mb-4" , style:"color:white" %>
+
+
+<table class="table table-bordered table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th>User Id</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @friends.each do |friend| %>
+      <% if friend.user == current_user %>
+      <tr>
+        <td><%= link_to friend.first_name +' '+friend.last_name, friend%></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td><%= friend.user_id %></td>
+<!--        <td><%#= link_to 'Show', friend %></td>-->
+
+        <%# if friend.user == current_user %>
+        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
+        <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm'%></td>
+        <%# else %>
+<!--          <td></td>-->
+<!--          <td></td>-->
+        <%# end %>
+
+      </tr>
+      <% end %>
+
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+  <h1>Hello World</h1>
+
+  <p>This is My First Ruby on Rails Web Page</p>
+
+<% end %>
+
+
